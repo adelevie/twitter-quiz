@@ -12,33 +12,33 @@
         <p>
           <b><h2><%= @quiz.name %></h2></b>
         </p>
-				<p>
-					<a href="/quizzes/standings/<%= @quiz.id %>">view standings</a>
-				</p>	
+                <p>
+                    <a href="/quizzes/standings/<%= @quiz.id %>">view standings</a>
+                </p>    
 
-				<% @quiz.questions.each do |question| %>
-					<h3>Q: <%= question.body %> <i><%= question.points %> point(s)</i></h3>
-					<h3>A: <%= question.answer %></h3>
-					<% if question.asked? %>
+                <% @quiz.questions.each do |question| %>
+                    <h3>Q: <%= question.body %> <i><%= question.points %> point(s)</i></h3>
+                    <h3>A: <%= question.answer %></h3>
+                    <% if question.asked? %>
 
-						<span>
-						
-						<%= question.submitted_answers.length %> answer(s)
-						
-						<% if question.correct_submitted_answer.nil? %>
-							<a href="/questions/ask/<%= question.id %>">
-								pick the correct answer
-							</a>
-						<% end %>
-						</span>
+                        <span>
+                        
+                        <%= question.submitted_answers.length %> answer(s)
+                        
+                        <% if question.correct_submitted_answer.nil? %>
+                            <a href="/questions/ask/<%= question.id %>">
+                                pick the correct answer
+                            </a>
+                        <% end %>
+                        </span>
 
-					<% else %>
-						<b><%= link_to "Ask!", "/questions/ask/#{question.id}" %></b>
-					<% end %>
-					<br />
-					<br />
-				<% end %>	
-				
+                    <% else %>
+                        <b><%= link_to "Ask!", "/questions/ask/#{question.id}" %></b>
+                    <% end %>
+                    <br />
+                    <br />
+                <% end %>    
+                
       <div class="wat-cf">
         <%= link_to image_tag("web-app-theme/icons/application_edit.png", :alt => "#{t("web-app-theme.edit", :default=> "Edit")}") + " " + t("web-app-theme.edit", :default=> "Edit"), edit_quiz_path(@quiz), :class => "button" %> 
         <%= link_to image_tag("web-app-theme/icons/cross.png", :alt => "#{t("web-app-theme.delete", :default=> "Delete")}") + " " + t("web-app-theme.delete", :default => "Delete"), quiz_path(@quiz), :method => "delete", :class => "button", :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}" %>

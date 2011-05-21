@@ -7,18 +7,18 @@ class Quiz < ActiveRecord::Base
   has_many :scoreboard_entries
 
   def save_submitted_answers
-      self.questions.select {|q| q.asked?}.each do |question|
-          question.save_submitted_answers
-          sleep(5)
-      end 
+    self.questions.select {|q| q.asked?}.each do |question|
+      question.save_submitted_answers
+      sleep(5)
+    end
   end
 
   def end
-      self.user.twitter_client.update("#{self.first_place.user_name} is the winner!")
+    self.user.twitter_client.update("#{self.first_place.user_name} is the winner!")
   end
 
   def first_place
-      self.scoreboard_entries.ranked.first.answerer
+    self.scoreboard_entries.ranked.first.answerer
   end
     
 end

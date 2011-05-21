@@ -1,25 +1,25 @@
 <div class="block">
-	<div class="content">
-		<div class="innner">
-			<h2>Standings for <i><%= @quiz.name %></i></h2>
-			
-			<table class="table">
-				<tr>
-					<th>Rank</th>
-					<th>Score</th>
-					<th>User</th>
-				</tr>
-			
-				<% @quiz.scoreboard_entries.ranked.each_with_index do |scoreboard_entry, i| %>
-					<tr>
-						<td><%= i+1 %></td>
-						<td><%= scoreboard_entry.score %></td>
-						<td><%= scoreboard_entry.answerer.username %></td>
-					</tr>
-				<% end %>				
+    <div class="content">
+        <div class="innner">
+            <h2>Standings for <i><%= @quiz.name %></i></h2>
+            
+            <table class="table">
+                <tr>
+                    <th>Rank</th>
+                    <th>Score</th>
+                    <th>User</th>
+                </tr>
+            
+                <% @quiz.scoreboard_entries.ranked.each_with_index do |scoreboard_entry, i| %>
+                    <tr>
+                        <td><%= i+1 %></td>
+                        <td><%= scoreboard_entry.score %></td>
+                        <td><%= scoreboard_entry.answerer.username %></td>
+                    </tr>
+                <% end %>
 
-			</table>
+            </table>
 
-		</div>
-	</div>
+        </div>
+    </div>
 </div>
