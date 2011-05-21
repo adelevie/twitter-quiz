@@ -1,8 +1,8 @@
 class QuizzesController < ApplicationController
 
-	def standings
-		@quiz = Quiz.find(params[:id])
-	end
+  def standings
+    @quiz = Quiz.find(params[:id])
+  end
 
   # GET /quizzes
   # GET /quizzes.xml
