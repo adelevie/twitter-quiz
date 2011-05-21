@@ -1,9 +1,9 @@
 class QuestionsController < ApplicationController
 
-	def ask
-		@question = Question.find(params[:id])
-		@question.ask
-	end
+  def ask
+    @question = Question.find(params[:id])
+    @question.ask 
+  end
 
   # GET /questions
   # GET /questions.xml
