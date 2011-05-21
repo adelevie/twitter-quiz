@@ -20,18 +20,4 @@ class User < ActiveRecord::Base
     end
   end
 
-  private
-
-  def setup_twitter
-    if self.connected_to_twitter?
-      Twitter.configure do |config|
-        config.consumer_key = Devise::Twitter.consumer_key
-        config.consumer_secret = Devise::Twitter.consumer_secret
-        config.oauth_token = self.twitter_oauth_token
-        config.oauth_token_secret = self.twitter_oauth_secret
-      end
-    end
-  end
-
-
 end
