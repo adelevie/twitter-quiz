@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  body: MyString
+  points: 1
+  quiz_id: 1
+
+two:
+  body: MyString
+  points: 1
+  quiz_id: 1
