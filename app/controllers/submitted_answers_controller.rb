@@ -10,9 +10,9 @@ class SubmittedAnswersController < ApplicationController
 	
 	  @scoreboard_entry = ScoreboardEntry.find_or_create_by_quiz_id(@submitted_answer.quiz_id) do |se|
 		  se.answerer_id = @submitted_answer.answerer_id
-	  end
-	  @scoreboard_entry.deposit(@submitted_answer.question.points)
-	  @scoreboard_entry.save
+    end
+    @scoreboard_entry.deposit(@submitted_answer.question.points)
+    @scoreboard_entry.save
 	
 	  if params[:question_is_last?]
 		  redirect_to '/quizzes/'+@submitted_answer.question.quiz_id.to_s
