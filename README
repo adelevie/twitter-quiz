@@ -1,4 +1,11 @@
-TODO:
-1. use points for questions
-2. determine winner of quiz
-3. pusher updates for questions/ask/:id
+Installation:
+
+1. clone git repo
+2. `bundle install`
+3. create config/initializers/devise_twitter.rb (go to dev.twitter.com to get your api keys):
+>`Devise::Twitter.setup do |config|
+>  config.consumer_key = ''
+>  config.consumer_secret = ''
+>  config.scope = :user
+>end`
+
