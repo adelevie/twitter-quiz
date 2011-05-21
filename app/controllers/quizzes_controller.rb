@@ -30,7 +30,7 @@ class QuizzesController < ApplicationController
   # GET /quizzes/new.xml
   def new
     @quiz = Quiz.new(:user_id => current_user.id)
-		2.times { @quiz.questions.build }
+    2.times { @quiz.questions.build }
 
     respond_to do |format|
       format.html # new.html.erb
