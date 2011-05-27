@@ -6,6 +6,10 @@ class Question < ActiveRecord::Base
 
   scope :asked, where(:asked => 1)
 
+  def channel_name(action='ask')
+    "#{self.user.email}/questions/#{action}/#{self.id}"
+  end
+
   def correct_submitted_answer
     self.submitted_answers.select {|a| a.correct == 1}.first
   end

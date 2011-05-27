@@ -10,6 +10,7 @@ gem 'devise'
 gem 'devise-twitter'
 gem 'web-app-theme', '>= 0.6.2'
 gem 'twitter'
+gem 'pusher'
 
 
 # Use unicorn as the web server
