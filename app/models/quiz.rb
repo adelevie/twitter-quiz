@@ -11,6 +11,8 @@ class Quiz < ActiveRecord::Base
       question.save_submitted_answers
       sleep(5)
     end
+
+    self.submitted_answers
   end
 
   def end

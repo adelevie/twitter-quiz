@@ -6,6 +6,11 @@ class Question < ActiveRecord::Base
 
   scope :asked, where(:asked => 1)
 
+  def close!
+    self.closed = 0
+    self.save
+  end
+
   def channel_name(action='ask')
     "#{self.user.email}/questions/#{action}/#{self.id}"
   end

@@ -3,6 +3,11 @@ class QuestionsController < ApplicationController
   def ask
     @question = Question.find(params[:id])
     @question.ask 
+        
+    respond_to do |format|
+      format.html # index.html.erb
+      format.js  { render :js => @questions }
+    end
   end
 
   # GET /questions

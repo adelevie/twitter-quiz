@@ -1,35 +1,15 @@
-<%= render :partial => 'pusher/questions/channel', :locals => {:question_id => @question.id} %>
-
 <div class="block">
     <div class="content">
         <h2 class="title"><%= @question.body %></h2>
         <div class="inner">
-            <table class="table" border="1">
+            <table class="table" id="submitted_answers_table" border="1">
                 <tr>
                     <th class="first">Username</th>
                     <th>Response</th>
                     <th>Correct?</th>
                 </tr>
                 <% @question.submitted_answers.each do |submitted_answer| %>
-                    <tr>
-                        <td><%= submitted_answer.answerer.username %></td> 
-                        <td><%= submitted_answer.body %></td>
-                        <td>
-                            <% form_for :submitted_answer, :remote => true, :url => '/submitted_answers/update' do |f| %>
-                                <input type="hidden" name="id" value="<%= submitted_answer.id %>" />
-                                
-                                <input type="hidden" name="question_is_last?" value="<%= @question.is_last? %>" />
-
-                                <% unless @question.is_last? %>
-                                    <input type="hidden" name="next_question_id" value="<%= @question.next_question.id %>"/>                        
-                                <% end %>
-
-                                <input type="hidden" name="submitted_answer[correct]" value="1" />    
-
-                                <%= f.submit 'mark as correct' %>
-                            <% end %>
-                        </td>
-                    </tr>
+                  <%= render :partial => 'submitted_answer', :locals => {:submitted_answer => submitted_answer} %>
                 <% end %>
 
             </table>

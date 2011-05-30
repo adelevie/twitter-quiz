@@ -23,7 +23,7 @@
 
                         <span>
                         
-                        <%= question.submitted_answers.length %> answer(s)
+                        <%= link_to "#{question.submitted_answers.length} answer(s)", "/questions/ask/#{question.id}" %>
                         
                         <% if question.correct_submitted_answer.nil? %>
                             <a href="/questions/ask/<%= question.id %>">

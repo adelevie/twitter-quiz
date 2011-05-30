@@ -1,0 +1,13 @@
+<% form_for :submitted_answer, :remote => true, :url => '/submitted_answers/update' do |f| %>
+                                <input type="hidden" name="id" value="<%= submitted_answer.id %>" />
+                                
+                                <input type="hidden" name="question_is_last?" value="<%= question.is_last? %>" />
+
+                                <% unless question.is_last? %>
+                                    <input type="hidden" name="next_question_id" value="<%= question.next_question.id %>"/>                        
+                                <% end %>
+
+                                <input type="hidden" name="submitted_answer[correct]" value="1" />    
+
+                                <%= f.submit 'mark as correct' %>
+                            <% end %>
