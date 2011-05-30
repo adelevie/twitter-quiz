@@ -33,11 +33,20 @@ class SubmittedAnswer < ActiveRecord::Base
     self
   end
 
-  Pusher.app_id = '5737'
-  Pusher.key = '3ebbf4b67aef09218611'
-  Pusher.secret = '8adf397e12b9c8a956eb'
+  Pusher.app_id = APP_CONFIG['pusher']['app_id']
+  Pusher.key = APP_CONFIG['pusher']['key']
+  Pusher.secret = APP_CONFIG['pusher']['secret']
+
+  def username
+    self.answerer.username
+  end
+
+  def as_pusher_json
+    self.to_json(:methods => :username, :only => [:id, :body, :username])
+  end
 
   def push!
-    puts Pusher[self.question.channel_name].trigger("#{self.question.channel_name}-create", self.attributes)
+    #Pusher[self.question.channel_name].trigger("#{self.question.channel_name}-create", self.attributes)
+    Pusher['foo'].trigger("foo-create", self.as_pusher_json)
   end
 end

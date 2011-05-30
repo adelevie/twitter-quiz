@@ -1,5 +1,8 @@
 require File.expand_path('../boot', __FILE__)
 
+require 'yaml'  
+APP_CONFIG = YAML.load(File.read(File.expand_path('../app_config.yml', __FILE__)))  
+
 require 'rails/all'
 
 # If you have a Gemfile, require the gems listed there, including any gems
@@ -8,6 +11,7 @@ Bundler.require(:default, Rails.env) if defined?(Bundler)
 
 module TwitterQuiz
   class Application < Rails::Application
+    ActiveRecord::Base.include_root_in_json = false
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.

@@ -3,3 +3,5 @@ db/*.sqlite3
 log/*.log
 tmp/**/*
 config/devise_twitter.rb
+config/app_config.yml
+

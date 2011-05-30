@@ -10,10 +10,10 @@
 
 
   <script id="submitted_answer_template" type="text/html">
-    <%= render :partial => 'questions/submitted_answer', :locals => {:submitted_answer => SubmittedAnswer.fake} %>
+    <%= render :partial => 'questions/submitted_answer_js', :locals => {:submitted_answer => SubmittedAnswer.fake} %>
   </script>
   <script type="text/javascript">
-    var pusher = new Pusher('3ebbf4b67aef09218611');
+    var pusher = new Pusher('7c30243799aa373f964c');
     var channel = pusher.subscribe('foo');
     channel.bind('foo-create', function(submitted_answer) {
       var html = $('#submitted_answer_template').tmpl(submitted_answer);
