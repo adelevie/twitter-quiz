@@ -30,6 +30,9 @@ gem 'eventmachine',     :git => 'git://github.com/eventmachine/eventmachine.git'
 # async http requires
 gem 'em-http-request',:git => 'git://github.com/igrigorik/em-http-request.git', :require => 'em-http'
 
+gem 'twitterstream'
+
+
 #gem 'addressable', :require => 'addressable/uri'
 
 

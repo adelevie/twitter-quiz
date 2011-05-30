@@ -139,6 +139,9 @@ GEM
       multi_xml (~> 0.2.0)
       rash (~> 0.3.0)
       simple_oauth (~> 0.1.4)
+    twitterstream (0.2.1)
+      json (>= 1.2.0)
+      oauth (>= 0.4.1)
     tzinfo (0.3.27)
     warden (1.0.3)
       rack (>= 1.0.0)
@@ -163,4 +166,5 @@ DEPENDENCIES
   sqlite3-ruby
   thin
   twitter
+  twitterstream
   web-app-theme (>= 0.6.2)
