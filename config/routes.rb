@@ -13,7 +13,6 @@ TwitterQuiz::Application.routes.draw do
   resources :questions
   resources :quizzes
 
-
-
+  match '/twitter_em_server', :to => Tweet
   root :to => 'welcome#index'
 end

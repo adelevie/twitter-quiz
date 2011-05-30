@@ -12,6 +12,8 @@ gem 'web-app-theme', '>= 0.6.2'
 gem 'twitter'
 gem 'pusher'
 gem 'jquery-rails'
+gem 'sinatra'
+gem 'thin'
 
 
 # Use unicorn as the web server
