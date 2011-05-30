@@ -11,6 +11,7 @@ gem 'devise-twitter'
 gem 'web-app-theme', '>= 0.6.2'
 gem 'twitter'
 gem 'pusher'
+gem 'jquery-rails'
 
 
 # Use unicorn as the web server
