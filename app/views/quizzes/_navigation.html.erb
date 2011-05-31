@@ -1,0 +1,16 @@
+<!--
+<ul class="wat-cf">
+  <li class="first active"><%= link_to "Home", root_url %></li>
+  <li><%= link_to "New Quiz", new_quiz_path %></li>
+  <li><%= link_to "My Quizzes", quizzes_path %></li>
+</ul>
+-->
+
+
+<ul class="wat-cf">
+<% tabs_tag(:builder => MenuTabBuilder, :open_tabs => {:class => "wat-cf" }) do |tab| %>
+    <%= tab.home "Home", root_url %>
+    <%= tab.new_quiz "New Quiz", new_quiz_path %>
+    <%= tab.quizzes "My Quizzes", quizzes_path %>
+  <% end %>
+<ul class="wat-cf">

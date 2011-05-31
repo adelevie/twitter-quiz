@@ -16,6 +16,7 @@ gem 'sinatra'
 gem 'thin'
 gem 'em-http-oauth-request'
 gem 'cancan'
+gem "tabs_on_rails"
 
 # async wrappers
 gem 'eventmachine',     :git => 'git://github.com/eventmachine/eventmachine.git'

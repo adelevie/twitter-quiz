@@ -15,6 +15,6 @@ class ApplicationController < ActionController::Base
         flash[:error] = "You need to <a href='/user/connect/twitter'>connect to Twitter</a> before you can Tweet quiz questions.".html_safe
       end
     end
-    redirect_to root_url
+    redirect_to :back
   end
 end

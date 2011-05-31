@@ -8,6 +8,7 @@ class QuizzesController < ApplicationController
   # GET /quizzes
   # GET /quizzes.xml
   def index
+    set_tab :quizzes
     @quizzes = Quiz.where(:user_id => current_user.id)
 
     respond_to do |format|
@@ -30,6 +31,7 @@ class QuizzesController < ApplicationController
   # GET /quizzes/new
   # GET /quizzes/new.xml
   def new
+    set_tab :new_quiz
     @quiz = Quiz.new(:user_id => current_user.id)
     2.times { @quiz.questions.build }
 

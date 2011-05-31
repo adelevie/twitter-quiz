@@ -1,0 +1,11 @@
+<script type="text/javascript">
+  var pusher = new Pusher('7c30243799aa373f964c');
+
+  <% if current_user %>
+    var channel = pusher.subscribe('<%= current_user.id %>');
+    channel.bind('<%= current_user.id %>/submitted_answer-create', function(submitted_answer) {
+      var html = $('#submitted_answer_template').tmpl(submitted_answer);
+      $('#submitted_answers_table').append(html);
+    });
+  <% end %>
+</script>

@@ -1,20 +1,19 @@
 <div class="block">
-		<div class="content">
-			<div class="inner">
-				
-				<h1>
-					<a href="/quizzes/new">Create a Quiz</a>
-				</h1>
-				
-			
-				<% if current_user.connected_to_twitter? %>
-					<!-- log out of twitter goes here -->
-				<% else %>
-					<a href="/user/connect/twitter">connect to twitter</a>
-				<% end %>
-
-		</div>
-	</div>
+  <div class="secondary-navigation">
+    <%= render :partial => 'quizzes/navigation' %>
+  </div>
+  <div class="content">
+    <div class="inner">
+      <h1>
+        <a href="/quizzes/new">Create a Quiz</a>
+      </h1>
+      <% if current_user.connected_to_twitter? %>
+        <!-- log out of twitter goes here -->
+      <% else %>
+        <a href="/user/connect/twitter">connect to twitter</a>
+      <% end %>
+    </div>
+  </div>
 </div>
 
 
