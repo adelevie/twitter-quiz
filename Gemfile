@@ -15,6 +15,7 @@ gem 'jquery-rails'
 gem 'sinatra'
 gem 'thin'
 gem 'em-http-oauth-request'
+gem 'cancan'
 
 # async wrappers
 gem 'eventmachine',     :git => 'git://github.com/eventmachine/eventmachine.git'
