@@ -1,4 +1,5 @@
 class QuizzesController < ApplicationController
+  load_and_authorize_resource
 
   def standings
     @quiz = Quiz.find(params[:id])
@@ -7,7 +8,7 @@ class QuizzesController < ApplicationController
   # GET /quizzes
   # GET /quizzes.xml
   def index
-    @quizzes = Quiz.all
+    @quizzes = Quiz.where(:user_id => current_user.id)
 
     respond_to do |format|
       format.html # index.html.erb
